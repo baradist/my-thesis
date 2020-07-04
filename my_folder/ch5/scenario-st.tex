@@ -1,4 +1,4 @@
-\subsection{Сценарий 4}
+\subsection{Сценарий 4: Simple Tag}
 
 Как уже упоминалось \hyperref[exp-st]{выше}, этот сценарий не подразумевает коммуникационных действий. Но он был выбран нами, так как он достаточно сложный, и при этом агенты из одной команды имеют одинаковые пространства наблюдения и действий, что позволяет применить вариант алгоритма MADDPG с общим мозгом.
 
@@ -14,8 +14,21 @@
 
 \begin{figure}[ht!]
 	\center
-%	\includegraphics [scale=0.6] {my_folder/images/ch5/st-comm.png}
+%	\includegraphics [scale=0.6] {my_folder/images/ch5/st-4vs2-rew.png}
 	\includegraphics [scale=0.6] {my_folder/images/in_progress.png}
 	\caption{График консистентности действий коммуникации для алгоритмов DDPG, MADDPG и MADDPG с общим мозгом.}
-	\label{fig:result-st-comm}
+	\label{fig:result-st-4vs2-rew}
 \end{figure}
+
+\begin{table}[t!]
+	\centering\small
+	\caption{Среднее время, потраченное на обучение с различными алгоритмами в 20000 эпизодов.}
+	\label{tab-sr-time}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		&DDPG&MADDPG&MADDPG с одним мозгом\\
+		\hline
+		Время, 20000 эпизодов&7ч. 46мин.&10ч. 18мин.&8ч. 20мин.\\ \hline
+	\end{tabular}
+	\normalsize% возвращаем шрифт к нормальному
+\end{table}
