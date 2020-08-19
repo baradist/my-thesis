@@ -1,0 +1,63 @@
+\chapter{Псевдокод алгоритма MADDPG}\label{appendix-maddpg-alg} % Заголовок
+
+\setlength{\parindent}{0em}
+
+\textbf{for} episode = 1, M \textbf{do}
+
+\setlength{\parindent}{1em}
+
+Инициализируем рандомный процесс $\mathcal{N}$ для исследования
+
+Получаем начальные наблюдаемые состояния $x$
+
+\textbf{for} t = 1, максимальная длина эпизода \textbf{do}
+
+\setlength{\parindent}{2em}
+
+Для каждого агента $i$ выбираем действие $a_t = \mathbf{\mu}_{\theta_i} (o_i) + \mathcal{N}_t$ исходя из текущей политики и исследовательского шума
+
+Выполняем действия $a = (a_1, ..., a_N)$ и наблюдаем награду $r$ и новое состояние $x'$
+
+Сохраняем переход $(x, a, r, x')$ в реплей-буффер $D$
+
+$x \leftarrow x'$
+
+\textbf{for} episode = 1, N \textbf{do}
+
+\setlength{\parindent}{3em}
+
+Семплируем мини-набор из $S$ переходов $(x^j, a^j, r^j, x'^j)$ из $D$
+
+Задаём $y^i = r^j_i + \gamma Q^{\mathbf{\mu}'}_i (x'^j, a'_1, ..., a'_N)| _{a'_k = \mu'_k(o^j_k) \theta^{Q'})}$
+
+Обновляем критика минимизацией функции потерь: $\mathcal{L}(\theta_i) = \dfrac{1}{S} \sum_{j} (y^j - Q^\mu_i(x^j, a^j_1, ..., a^j_N | \theta^Q))^2$
+
+Обновляем актора используя семплированый градиент политики:
+
+\begin{equation}
+    \begin{multlined}
+        \nabla_{\theta_i} J \approx \dfrac{1}{S} \sum_{j} \nabla_{\theta_i} \mu_i (o^j_i) \nabla_{a_i}Q^\mu_i(x^j, a^j_1, ..., a_i, ..., a^j_N) | _{a_i=\mu_i(o^j_i)}
+    \end{multlined}
+\end{equation}
+
+\setlength{\parindent}{2em}
+
+\textbf{end for}
+
+Обновляем параметры целевых сетей для каждого агента i:
+
+\begin{equation}
+    \begin{multlined}
+        \theta'_i \leftarrow \tau \theta_i + (1 - \tau) \theta'_i
+    \end{multlined}
+\end{equation}
+
+\setlength{\parindent}{1em}
+
+\textbf{end for}
+
+\setlength{\parindent}{0em}
+
+\textbf{end for}
+
+\setlength{\parindent}{2.5em}
