@@ -1,4 +1,4 @@
-%%%% Шаблон ВКР <<SPbPU-student-thesis-template>>  %%%%
+%%%% Шаблон Отчета по практике <<SPbPU-student-thesis-template>>  %%%%
 %%
 %%   Создан на основе глубокой переработки шаблона российских кандидатских и докторских диссертаций [1]. 
 %%   
@@ -11,7 +11,7 @@
 %%  
 %%%% Student thesis template <<SPbPU-student-thesis-template>> %%%%
 %%
-%%   Created on the basis of deepl modifification of the Russian candidate and doctorate thesis template [1]. 
+%%   Created on the basis of deep modifification of the Russian candidate and doctorate thesis template [1]. 
 %%   
 %%   Full list of differences can be achieved by git commands.
 %%   List of template authors can be seen in the README.md file.
@@ -25,51 +25,44 @@
 %%  
 \input{template_settings/ch_preamble} % лучше не редактировать / please, keep unmodified
 
-\setcounter{docType}{1} % лучше не редактировать / please, keep unmodified
+\setcounter{docType}{2} % лучше не редактировать / please, keep unmodified
 
 %%%% Настройки автора / Author settings
 %% 
 \input{my_folder/my_settings} % добавляем свои команды / update your commands
 
+
 \begin{document} % начало документа
+	
 
 
 \input{template_settings/common/renames} % Заполнить сведения, 
 										 % в т.ч. ключевые слова и аннотацию.
 
-\input{my_folder/title}					 % Титульный лист
+\input{my_folder/practice}				 % Титульный лист
 										 % Убираем footnotes, консультанта, если нет
-
-\input{my_folder/task}					 % Задание 
-										 % Для сдачи в высшую школу компилируем двухсторонний My_task.tex 
-										 % После подписания задания изменение его содержания и оформления запрещено
-
-\input{my_folder/summary}			 	 % Реферат 
-										 % Убираем footnotes, дубли команд \abstractEn и \abstractRu 
-										
 
 \input{my_folder/contents}  	         % Оглавление
 
 
-\input{my_folder/intro}	    	 % Введение
+\input{my_folder/introduction}	    	 % Введение
 
 %% Начало основной части
-\input{my_folder/ch1}
-\ContinueChapterBegin % размещать главы <<подряд>>
-\input{my_folder/ch2}
-\input{my_folder/ch3}
-\input{my_folder/ch4}
-\input{my_folder/ch5}
+\input{my_folder/chapter1}	         	 % Глава 1
+\ContinueChapterBegin % размещать главы <<подряд>> 
+\input{my_folder/chapter2}	         	 % Глава 2
+\input{my_folder/chapter3}           	 % Глава 3
+\input{my_folder/chapter4}           	 % Глава 3
 \ContinueChapterEnd % завершить размещение глав <<подряд>>
 %% Завершение основной части
 
-\input{my_folder/concl}        	 % Заключение
+\input{my_folder/conclusion}        	 % Заключение
 
 %% Наличие следующих перечней не исключает расшифровку сокращения и условного обозначения при первом упоминании в тексте!
 \input{my_folder/acronyms}		         % Необязательная рубрика! Список сокращений и условных обозначений
 
-%\input{my_folder/dictionary}    		 % Необязательная рубрика! Словарь терминов
-% По порядку после Списка сокращений и условных обозначений, если есть.
+\input{my_folder/dictionary}    		 % Необязательная рубрика! Словарь терминов
+% По порядку после Списка сокращений и условных обозначений, если есть.	
 
 
 \input{my_folder/references}		     % Список литературы
@@ -79,11 +72,9 @@
 \appendix % не редактировать / keep unmodified
 
 
-\input{my_folder/appendix-ddpg-alg} % Приложение 1
+\input{my_folder/appendix1}			     % Приложение 1
 
-\input{my_folder/appendix-maddpg-alg} % Приложение 2
-
-\input{my_folder/appendix-code}
+\input{my_folder/appendix2}			 	 % Приложение 2
 
 
 \end{document} % конец документа

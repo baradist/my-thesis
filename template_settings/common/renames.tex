@@ -1,11 +1,13 @@
 %%% Внесите свои данные - Input your data
 %%
 %%
-\newcommand{\Author}{О.Ю.\,Григорьев} % И.О. Фамилия автора 
+\newcommand{\Author}{О.Ю.\,Григорьев} % И.О. Фамилия автора
 \newcommand{\AuthorFull}{Григорьев Олег Юрьевич} % Фамилия Имя Отчество автора
 \newcommand{\AuthorFullDat}{Григорьеву Олегу Юрьевичу} % Фамилия Имя Отчество автора в дательном падеже (Кому? Студенту...)
-\newcommand{\AuthorPhone}{+7-911-088-88-48} % номер телефорна автора для оперативной связи  
+\newcommand{\AuthorFullVin}{Григорьева Олега Юрьевича} % в винительном падеже (Кого? что?  Програмиста ...)
+\newcommand{\AuthorPhone}{+7-911-088-88-48} % номер телефорна автора для оперативной связи
 \newcommand{\Supervisor}{В.Г.\,Пак} % И. О. Фамилия научного руководителя
+\newcommand{\SupervisorFull}{Пак Вадим Геннадьевич} % Фамилия Имя Отчество научного руководителя
 \newcommand{\SupervisorVin}{В.Г.\,Пака} % И. О. Фамилия научного руководителя  в винительном падеже (Кого? что? Руководителя ...)
 \newcommand{\SupervisorJob}{доцент ВШиСТ} %
 \newcommand{\SupervisorJobVin}{доцента ВШиСТ} % в винительном падеже (Кого? что?  Програмиста ...)
@@ -15,7 +17,7 @@
 %%
 %Руководитель, утверждающий задание
 \newcommand{\Head}{В.Г.\,Пак} % И. О. Фамилия руководителя подразделения (руководителя ОП)
-\newcommand{\HeadDegree}{Руководитель ОП}% Только должность:   
+\newcommand{\HeadDegree}{Руководитель ОП}% Только должность:
 %Руководитель %ОП 
 %Заведующий % кафедрой
 %Директор % Высшей школы
@@ -31,17 +33,25 @@
 \newcommand{\HeadApDep}{O} % заменить на краткую аббревиатуру подразделения или оставить пустым, если утверждает руководитель ОП
 %%% Консультант по нормоконтролю
 \newcommand{\ConsultantNorm}{Ю.Д.\,Заковряшин} % И. О. Фамилия консультанта по нормоконтролю. ТОЛЬКО из числа ППС!
-\newcommand{\ConsultantNormDegree}{Старший преподаватель ВШИСиСТ} %   
+\newcommand{\ConsultantNormDegree}{Старший преподаватель ВШИСиСТ} %
+%%% Первый консультант
+\newcommand{\ConsultantExtraFull}{Заковряшин Юрий Дмитриевич} % Фамилия Имя Отчетство дополнительного консультанта
 \newcommand{\ConsultantExtra}{И.О.\,Фамилия} % И. О. Фамилия дополнительного консультанта 
 \newcommand{\ConsultantExtraDegree}{должность, степень} % 
 \newcommand{\ConsultantExtraVin}{И.О.\,Фамилию} % И. О. Фамилия дополнительного консультанта в винительном падеже (Кого? что? Руководителя ...)
 \newcommand{\ConsultantExtraDegreeVin}{должность, степень} %  в винительном падеже (Кого? что? Руководителя ...)
+%%% Второй консультант
+\newcommand{\ConsultantExtraTwoFull}{Фамилия Имя Отчетство} % Фамилия Имя Отчетство дополнительного консультанта
+\newcommand{\ConsultantExtraTwo}{И.О.\,Фамилия} % И. О. Фамилия дополнительного консультанта
+\newcommand{\ConsultantExtraTwoDegree}{должность, степень} %
+\newcommand{\ConsultantExtraTwoVin}{И.О.\,Фамилию} % И. О. Фамилия дополнительного консультанта в винительном падеже (Кого? что? Руководителя ...)
+\newcommand{\ConsultantExtraTwoDegreeVin}{должность, степень} %  в винительном падеже (Кого? что? Руководителя ...)
 \newcommand{\Reviewer}{И.О.\,Фамилия} % И. О. Фамилия резензента. Обязателен только для магистров.
 \newcommand{\ReviewerDegree}{должность, степень} % 
 %%
 %%
 \renewcommand{\thesisTitle}{Исследование применения технологии обучения с подкреплением в управлении мультиагентной системой в игровой среде}
-%\newcommand{\thesisDegree}{бакалавра}% магистра или специалиста% 
+%\newcommand{\thesisDegree}{бакалавра}% магистра или специалиста%
 \newcommand{\thesisDegree}{магистерская диссертация}% дипломный проект, дипломная работа, магистерская диссертация %c 2020
 \newcommand{\thesisTitleEn}{Title of the thesis} %2020
 \newcommand{\thesisDeadline}{05.2020}
@@ -88,20 +98,64 @@
 \newcommand{\keywordsEn}{Machine Learning, Reinforcement Learning, Deep Learning, Multi-Agent Systems} % ВВЕДИТЕ ключевые слова по-английски
 %%
 %%
-%% Реферат не более 600 знаков на русский или английский текст
+%% Реферат ОТ 1000 ДО 1500 знаков на русский или английский текст
+%%
+%Реферат должен содержать:
+%- предмет, тему, цель ВКР;
+%- метод или методологию проведения ВКР:
+%- результаты ВКР:
+%- область применения результатов ВКР;
+%- выводы.
+
 \newcommand{\abstractRu}{В данной работе исследована технология обучения с подкреплением, её применимость к мультиагентным системам, а именно применимость алгоритма мультиагентной глубокой детерминированной политики градиента (MADDPG). Изучено общение агентов между собой. Были предложены, реализованы и протестированы различные способы оптимизации обучения. Эксперименты производились в различных сценариях в двухмерной среде multiagent-particle-envs \cite{multiagent-particle-envs} от компании OpenAI.} % ВВЕДИТЕ текст аннотации по-русски
 %%
 %%
-\newcommand{\abstractEn}{In this thesis Reinforcement Learning and its applicability to Multi-Agent systems were examined. Specifically, Multi Agent Deep Deterministic Policy Gradient was reviewed. Communication between agents was researched. Different optimizing methods were suggested, implemented and tested. Experiments were set up on different scenarious in 2D-environment  multiagent-particle-envs \cite{multiagent-particle-envs} by OpenAI. } % ВВЕДИТЕ текст аннотации по-английски
+\newcommand{\abstractEn}{In this thesis Reinforcement Learning and its applicability to Multi-Agent systems were examined. Specifically, Multi Agent Deep Deterministic Policy Gradient was reviewed. Communication between agents was researched. Different optimizing methods were suggested, implemented and tested. Experiments were set up on different scenarious in 2D-environment  multiagent-particle-envs \cite{multiagent-particle-envs} by OpenAI.} % ВВЕДИТЕ текст аннотации по-английски
 
 
+%%% РАЗДЕЛ ДЛЯ ОФОРМЛЕНИЯ ПРАКТИКИ
+%Место прохождения практики
+\newcommand{\PracticeType}{Отчет о прохождении %
+	%стационарной производственной (технологической (проектно-технологической)) %
+	такой-то % тип и вид ЗАМЕНИТЬ
+	практики}
 
+\newcommand{\Workplace}{СПбПУ, ИКНТ, ВШИСиСТ} % TODO Rename this variable
+
+% Даты начала/окончания
+\newcommand{\PracticeStartDate}{%
+дд.мм.гггг%
+%	22.06.2020
+}%
+\newcommand{\PracticeEndDate}{%
+	дд.мм.гггг%
+%	18.07.2020%
+}%
+%%
+
+\newcommand{\School}{
+%	Название высшей школы
+	Высшая школа интеллектуальных систем и~суперкомпьютерных~технологий
+}
+\newcommand{\practiceTitle}{Тема практики}
+
+
+%% ВНИМАНИЕ! Необходимо либо заменить текст аннотации (ключевых слов) на русском и английском, либо удалить там весь текст, иначе в свойства pdf-отчета по практике пойдет шаблонный текст.
 
 %%% Не меняем дальнейшую часть - Do not modify the rest part
 %%
 %%
 %%
 %%
+\ifnumequal{\value{docType}}{1}{% Если ВКР, то...
+	\newcommand{\DocType}{Выпускная квалификационная работа}
+	\newcommand{\pdfDocType}{\DocType~(\thesisDegree)} %задаём метаданные pdf файла
+	\newcommand{\pdfTitle}{\thesisTitle}
+}{% Иначе
+	\newcommand{\DocType}{\PracticeType}
+	\newcommand{\pdfDocType}{\DocType} %задаём метаданные pdf файла
+	\newcommand{\pdfTitle}{\practiceTitle}
+}%
 \newcommand{\HeadTitle}{\HeadDegree~\HeadDep}
 \newcommand{\HeadApTitle}{\HeadApDegree~\HeadApDep}
 \newcommand{\thesisOPCode}{\thesisSpecialtyCode\_\thesisOPPostfix}% код образовательной программы
@@ -110,9 +164,9 @@
 %%
 %%
 \hypersetup{%часть болка hypesetup в style
-		pdftitle={\thesisTitle},    % Заголовок pdf-файла
+		pdftitle={\pdfTitle},    % Заголовок pdf-файла
 		pdfauthor={\AuthorFull},    % Автор
-		pdfsubject={Выпускная квалификационная работа \thesisDegree. Шифр и наименование направления подготовки: \thesisSpecialtyCodeAndTitle. \abstractRu},      % Тема
+		pdfsubject={\pdfDocType. Шифр и наименование направления подготовки: \thesisSpecialtyCodeAndTitle. \abstractRu},      % Тема
 		pdfcreator={LaTeX, SPbPU-student-thesis-template},     % Приложение-создатель
 %		pdfproducer={},  % Производитель, Производитель PDF % будет выставлена автоматически
 		pdfkeywords={\keywordsRu}
@@ -140,6 +194,8 @@
 %\newcommand{\Ministry}{Минобрнауки России} 
 \newcommand{\Ministry}{Министерство науки и высшего образования Российской~Федерации} %с 2020
 \newcommand{\SPbPU}{Санкт-Петербургский политехнический университет Петра~Великого}
+\newcommand{\SPbPUOfficialPrefix}{Федеральное государственное автономное образовательное учреждение высшего образования}
+\newcommand{\SPbPUOfficialShort}{ФГАОУ~ВО~<<СПбПУ>>}
 %% Пробел между И. О. не допускается.
 \renewcommand{\alsoname}{см. также}
 \renewcommand{\seename}{см.}
