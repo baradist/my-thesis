@@ -412,10 +412,10 @@ sorting=none,% настройка сортировки списка литера
 \NewBibliographyString{urldateprefix}
 %
 \DefineBibliographyStrings{russian}{%
-	urldateprefix = {Проверено}}
+	urldateprefix = {дата обращения\addcolon}}
 \DefineBibliographyStrings{english}{%
 	urldateprefix = {visited on}}
-\DeclareFieldFormat{urldate}{\bibstring{urldateprefix}\addspace\mkdayzeros{\thefield{urlday}}\adddot\mkmonthzeros{\thefield{urlmonth}}\adddot\mkyearzeros{\thefield{urlyear}}.}
+\DeclareFieldFormat{urldate}{(\bibstring{urldateprefix}\addspace\mkdayzeros{\thefield{urlday}}\adddot\mkmonthzeros{\thefield{urlmonth}}\adddot\mkyearzeros{\thefield{urlyear}})}
 
 
 
